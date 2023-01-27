@@ -1,0 +1,977 @@
+/* Start Variables */
+:root {
+  --main-color: #19c8fa;
+  --transparent-color: rgb(15 116 143 / 70%);
+  --section-padding: 100px;
+}
+/* End Variables */
+/* start global rules  */ 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+      
+    font-family: 'Open Sans', sans-serif;
+     margin: 0;
+    padding: 0;
+   
+}
+ul{
+    list-style: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .container {
+      width: 750px; /* Default container width for tablets */
+    }
+  }
+  /* Medium devices (desktops, 992px and up) */
+  @media (min-width: 992px) { 
+    .container {
+      width: 970px; /* Default container width for desktops */
+    }
+  }
+  
+  /* Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) { 
+    .container {
+      width: 1170px; /* Default container width for large desktops */
+    }
+  }
+/* end global rules  */ 
+
+/* start components */
+.heading {
+  max-width: 100%;
+display: flex;
+flex-flow: column wrap;
+justify-content: center;
+align-items: center;
+padding-right: 80px;
+padding-left: 80px;
+}
+.heading h1 {
+  font-weight: normal;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 25px;
+  font-family: 'Open Sans', sans-serif;
+
+}
+.heading h1::before{
+content: "";
+border-bottom: black 2px solid;
+width: calc(100% - 30px);
+position: absolute;
+bottom: 0;
+left: 50%;
+TRANSFORM: translateX(-50%);
+}
+.heading h1::after{
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  /* the begning of the line will be at the center of the parent   */
+  left: 50%;
+TRANSFORM: translateX(-50%); 
+  background-color: white;
+  border: black 2px solid;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  }
+
+.heading p{
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 500px;
+  text-align: center;
+  color: #777;
+  margin: 0 auto 100px;
+}
+/* end components */
+
+/* <!-- start services -->
+<!-- end  services --> */
+
+/* start header */
+
+.header{
+  /* we make it absolute cause the header above a background of another 
+  section so when it's absolute it's out the flow */
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+.header .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  color: white;
+  /* to make the height inchangeable when we go to the phone  */
+  min-height: 99.2px;
+}
+.header .container::after{
+content: "";
+position:absolute;
+background-color: #a2a2a2;
+height: 1px;
+/* the line stop in the element exactly so we delete the 15px padding-left 
+ and 15px right of the container  */
+width: calc(100% - 30px);
+bottom: 0;
+left: 15px;
+}
+.container .logo img {
+  height: 30px;
+}
+.nav  {
+  /* this wil make tha nav take the whole space until the logo */
+  flex:1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav ul  {
+display: flex;
+}
+.nav ul li a {
+  /* to make the li respect the propreties */
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 14;
+  transition: 0.3s;
+  padding: 40px 10px;
+  
+}
+.nav ul li a:hover ,.nav ul li a.active{
+    color: var(--main-color);
+    border-bottom: var(--main-color) solid 1px;
+    /* to make this border up to the line */
+    position: relative;
+    z-index: 2;
+}
+
+.header .nav .search {
+  width: 40px;
+    height: 30px;
+    /* padding: 40px 10px; */
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-left: 1px solid white;
+    margin-left: 40px;
+    font-size: 17px;
+}
+/* media customisition */
+@media (max-width : 767px) {
+  .header .nav i.media {
+    display: block;
+     color: white;
+   }
+  .header .nav  ul {
+    display: none;
+   } 
+   .header .nav i.media:hover + ul {
+    display: flex;
+    flex-flow: column wrap;
+    position: absolute;
+    /* the first parent have relative the child ul will go under it 
+    in this case it's container */
+    top: 100%;
+    LEFT: 0;
+    width: 100%;
+}
+   .header .container .nav ul li a {
+    padding: 13px;
+    background-color: rgb(0 0 0 / 0.7);
+    
+   }
+}
+@media (min-width :768px){
+  .header .nav i.media {
+    display: none;
+   }
+}
+
+/* end header */
+
+
+/* start landing */
+ .landing{
+  background-image: url(../media/nocturnal_2560x1440.jpg);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  /* justify-content: ; */
+  align-items: center;
+ }
+ .landing .text {
+  width: 50%;
+  background-color: rgb(25 201 250 / 0.5);
+  color: white;
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  width: 50%;
+  padding: 50px;
+  align-items: flex-end;
+ }
+ .landing .text div {
+  max-width: 500px;
+}
+ .landing .text div h2 {
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+ .landing .text div p {
+  font-size: 14px;
+  line-height: 2;
+}
+
+ .landing .flesh {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+ }
+ .landing .flesh .fl {
+  font-weight: 900;
+  font-size: 25px;
+  color: rgb(255 255 255 / 0.5);
+}
+ .landing .flesh i {
+size: 20px;
+ }
+ @media (max-width :767px){
+  .landing .flesh i {
+    display: none;
+  }
+  .landing .text{
+    width: 100%;
+    justify-content: space-around;
+  } 
+  .landing .text p{
+    width: 95%;
+  }
+}
+.landing .circle {
+  position: absolute;
+    width: 60px;
+    display: flex;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    transform: translate(-50% , -50%);  
+    z-index: 2;
+}
+.landing .circle a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+
+}
+.landing .circle span{
+  display: block;
+  width: 15px ;
+  height: 15px;
+  border: 1px solid white ;
+  border-radius: 50%;
+}
+.landing .circle a:nth-child(2) span{
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color) ;
+}
+.landing .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 0.6);
+  /* position: absolute;
+  z-index: 1; */
+}
+
+/* end landing */
+
+/* start services */
+
+.services{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+/* we make the min max big cause we need just 2 inde each other inside each other 
+and the 1fr if there is space  */
+@media (min-width: 768px) {
+  .services .container .serv {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+     gap: 60px 40px
+  }
+}
+
+/* when we move to phone screen the grid system disable
+and we let the div serv block then inside it we give to each one from the 4 items 
+a display flex column to make the icon and the text one under the other  */
+@media (max-width : 767px){
+  .services .item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .services .item i {
+    /* we write important cause the margin right will overried the 0 */
+    margin: 0 0 30px !important;
+  }
+}
+.services .serv .item{
+  display: flex;
+}
+.services .serv .item i{
+margin-right: 50px;
+}
+.services .item h3 {
+  margin-bottom: 30px;
+  color: var(--main-color);
+}
+.services .item p {
+  line-height: 2;
+  color: #777;
+}
+/* start services */
+
+/* start design */
+.design{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  position: relative;
+  height: 95vh;
+  background-image: url(../media/background-design.jpg);
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  color: white;
+  align-items: center;
+}
+.design::before{
+  /* overlay */
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 0.6);
+  position: absolute;
+}
+.design .image {
+  position: relative;
+  bottom: -135px;
+  flex: 1;
+  /* this make the image in the center of his parent  */
+  text-align: center;
+}
+.design .card {
+  position: relative;
+  /* this make the element devise the whole page not just between themselves
+  not just holding the content */
+  flex: 1;
+  background-color: var(--transparent-color);
+  color: white;
+}
+.design .fend {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 50px;
+}
+.design .fend .icon {
+  display: flex;
+  padding: 15px 0;
+}
+/* we can use a list  to make the icon and the text
+and with the before we can add the icon one time 
+.design .text ul li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f108";
+  font-weight: 900;
+  margin-right: 20px;
+  position: relative;
+  top: 1px;
+} */
+.design .fend h2{
+  font-weight: normal;
+  margin-bottom: 50px;
+  font-size: 26px;
+}
+.design .fend .icon i {
+ margin-right: 20px;
+} 
+@media (max-width :767px){
+  .design .image{
+    display: none;
+  }
+}
+/*end design */
+
+/* start portfolio */
+.portfilio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.grid{
+  width: 100%;
+  display: grid;
+  grid-template: repeat(auto-fill , minmax(200px ,1fr)) / repeat(auto-fill , minmax(25% ,1fr));
+  row-gap: 5px;
+  column-gap:0 ;
+}
+@media(max-width : 1199px){
+    .grid {
+      grid-template: repeat(auto-fill , minmax(200px ,1fr)) / repeat(auto-fill , minmax(50% ,1fr));
+    }
+}
+@media(max-width : 767px){
+  .grid {
+    grid-template: repeat(auto-fill , minmax(200px ,1fr)) / repeat(auto-fill , 100%);
+  }
+}
+
+.grid img{
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+.grid .box {
+  position: relative;
+ overflow: hidden;
+}
+/* menu */
+.shuffle{
+  text-align: center;
+ padding-bottom: 30px;
+ display: block;
+}
+ .shuffle ul {
+  list-style: none;
+  display: flex;  
+  justify-content: center;
+}
+.shuffle ul li a   {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  margin-right: 2px;
+}
+.shuffle ul li:hover a {
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 2px;
+}
+.shuffle .active {
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 2px;
+}
+.grid .box .caption {
+  position: absolute;
+ width: 100%;
+ /* we make the caption desappear from to bottom cause we want it to 
+ pop up to the top */
+ bottom: -100%;
+ padding: 20px;
+ background-color: white;
+ transition: 0.3s;
+}
+.grid .box .caption h4{
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+.grid .box .caption p{
+  color: var(--main-color);
+}
+.grid .box:hover .caption {
+bottom: 0;
+}
+.grid .box:hover img {
+  /* make an trick with the picture without changing the size of it */
+  transform: scale(1.1) rotate(3deg);
+}
+.portfilio .more {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 30px;
+  padding: 10px 15px;
+  border-radius: 1px;
+  background: var(--main-color);
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+}
+/* end portfolio */
+
+
+/* start video */
+.video{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+.video::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 0.4) ;
+}
+.video video{
+  width: 100%;
+}
+.video .text{
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  color: white;
+  background-color: var(--transparent-color);
+  padding: 50px;
+}
+.video .text h2 {
+  font-weight: normal;
+  margin: 0 0 30px 0;
+  padding: 0;
+  font-size: 25px;
+ 
+}
+.video .text p {
+  margin: 0 0 30px 0;
+}
+.video .text button {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 10px 20px;
+  text-align: center;
+}
+.video .text button:hover{
+  cursor: pointer;
+}
+
+/* end video */
+
+/* start about */
+.about{
+  padding-top: var(--section-padding);
+  overflow: hidden;
+  text-align: center;
+}
+.about img {
+  max-width: 100%;
+  position: relative;
+  bottom: -135px;
+  margin-top: -135px;
+}
+@media (max-width: 767px) {
+  .about img {
+    bottom: -75px;
+    margin-top: -75px;
+    padding-right: 17px;  
+  }}
+
+/* end about */
+
+/* start statistics */
+.statistics{
+  /* the padding give the background more space */
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../media/stats.png);
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+.statistics .container  {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  padding: 30px 0px;
+  background-color: var(--transparent-color);
+  /* we give the position relative to be above the overlay */
+  position: relative;
+}
+.statistics .container .item{
+  padding-bottom:15px ;
+  color: white;
+}
+.statistics .container .item h1 {
+  font-size: 45px;
+  font-weight: bold;
+}
+.statistics .container .item i {
+ width: 40px;
+    height: 40px;
+    display: flex;
+    margin: 26px auto auto;
+    /* padding-top: 26px; */
+    justify-content: center;
+    align-items: center;
+    background-color: #19c8fa;
+    border-radius: 50%;
+}
+.statistics::before{
+  content: "" ;
+  left: 0;
+  top: 0;
+  position: absolute;
+ width: 100%;
+ height: 100%;
+  background-color: rgb(0 0 0 / 0.7);
+}
+@media(max-width: 767px){
+  .statistics .container .item  {
+    /* row ->width 100% */
+    flex-basis: 100%;
+  }
+}
+@media(min-width: 768px){
+  .statistics .container .item  {
+    flex-basis: 50%;
+  }
+}
+@media(min-width: 992px){
+  .statistics .container .item  {
+    flex-basis: 25%;
+  }
+}
+/* end statistics */
+
+
+/* start skills */
+
+.our-skills {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.our-skills .container {
+  /* we have 2 divs and we want them in one line */
+  display: flex;
+  justify-content: space-between;
+  /* if the screen size too litle will create another line */
+  flex-wrap: wrap;
+}
+@media (min-width: 992px) {
+  .our-skills .container > div {
+    /* from the midium screen the 2 element will be in one line */
+    flex-basis: 45%;
+  }
+}
+.our-skills .container > div > h3 {
+  margin: 0 0 30px;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+}
+.our-skills .container > div > p {
+  color: #777;
+  line-height: 2;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.our-skills .testimonials .content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .our-skills .testimonials .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .our-skills .testimonials .content img {
+    margin: 0 auto 20px;
+  }
+}
+.our-skills .testimonials .content img {
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 50px;
+}
+.our-skills .testimonials .text {
+  line-height: 1.8;
+  border-bottom: 1px solid #ccc;
+}
+.our-skills .testimonials .text p {
+  color: #777;
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.our-skills .testimonials ul {
+  width: 100%;
+display: flex;
+justify-content:center;
+margin : 50px auto;
+}
+.our-skills .testimonials ul li{
+  width: 15px;
+  height: 15px;
+  border: 1px solid #777;
+  background-color: white;
+  margin: 0 10px 0 0 ;
+  border-radius: 50%;
+}
+.our-skills .testimonials ul li.active {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+@media (max-width: 767px) {
+  .our-skills .testimonials .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .our-skills .testimonials .content img {
+    margin: 0 auto 20px;
+  }
+}
+/* second column */
+
+.our-skills .skills .prog-holder {
+  margin-bottom: 40px;
+}
+.our-skills .skills .prog-holder h4 {
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.our-skills .skills .prog-holder .prog {
+  background-color: #dedadc;
+  height: 30px;
+}
+.our-skills .skills .prog-holder .prog span {
+  /* it's important to write diplay block to hold x% from the parent (.prog) */
+  display: block;
+  background-color: var(--main-color);
+   /* to hold a place inside the parent the element must be 
+   displayed at the same form with the parent  */
+  height: 100%;
+  position: relative;
+}
+
+.our-skills .skills .prog-holder .prog span::before {
+  /* we have allready define an attribute name's data-progress inside
+   the html , the attr() allow us to get the value of this attr */
+  content: attr(data-progress);
+  position: absolute;
+  background-color: black;
+  color: white;
+  top: -40px;
+  right: -20px;
+  /* if the height doesn't defined the padding top and bottom
+  will add outside the box-sizing */
+  padding: 4px 0;
+  width: 40px;
+  text-align: center;
+  border-radius: 4px;
+}
+/* the flesh */
+.our-skills .skills .prog-holder .prog span::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 8px;
+  border-color: black transparent transparent;
+  right: -8px;
+  top: -15px;
+}
+
+/* end skills */
+
+
+/* start quote */
+
+.quote {
+ background-image: url(../media/quote.jpg);
+ background-size: cover;
+ position: relative;
+ margin-bottom: 100px;
+}
+.quote .container {
+  position: relative;
+text-align: center;
+padding: 100px 20px;
+color: white;
+}
+.quote::before {
+content: "";
+background-color: rgb(0 0 0 / 0.78);
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+position: absolute;
+}
+.quote .container q {
+  font-size: 25px;
+  position: relative;
+}
+.quote .container p {
+  margin-top: 20px;
+}
+.quote .container q::before{
+  /* when we want to use an icon in pseudo elements we use the unicode 
+  of the icone like this "\unocide" 
+  it's so important to declare these : 
+  -family: 'font awesome 5 free'
+   font-weight: 900; */
+  content: "\f10d";
+  font-family: 'font awesome 5 free';
+  font-weight: 900;
+  position: absolute;
+  left: -28px;
+  top: -4px;
+}
+.quote .container q::after{
+  content: "\f10e";
+  font-family: 'font awesome 5 free';
+  font-weight: 900;
+  position: absolute;
+  bottom: -5px;
+  right: -30px;
+}
+/* end quote */
+
+
+/* start pricing  */
+.pricing {
+  padding-bottom: var(--section-padding);
+}
+.pricing .container .pricing-card{
+  margin-top: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.pricing .container .pricing-card .item{
+  background-color: rgb(238 238 238 /0.2);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.pricing .container .pricing-card .item .price-box{
+  padding: 30px 35px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--main-color);
+  border-top: 1px solid var(--main-color);
+}
+.pricing-card .item .price-box span{
+  font-size: 50px;
+  font-weight: 600;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+}
+.pricing-card .item .price-box span::before {
+  content: "$";
+  font-weight: 600;
+  display: block;
+  position: absolute;
+  top: 17px;
+  right: 73px;
+  font-size: 20px;}
+.pricing-card .item .price-box span::after{
+  content: "/Mo";
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 21px;
+  right: -28px;
+}
+.pricing-card .item .price-box p{
+  margin-bottom: 20px;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+.pricing-card .item .features {
+  padding: 15px 30px;
+  text-align: center;
+  padding: 15px 30px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.pricing-card .item .features p {
+  width: 110px;
+  padding: 20px 0px;
+  border-bottom: 1px var(--main-color) solid;
+}
+.pricing .container .pricing-card .item .button{
+  padding: 50px 0;
+  border-top: 1px var(--main-color) solid;
+ 
+}
+.pricing .container .pricing-card .item a{
+  text-decoration: none;
+  color: black;
+  text-transform: capitalize;
+  padding: 10px 15px;
+  border: 1px var(--main-color) solid;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 15px;
+  border-radius: 3px;
+}
+.pricing-card .item .features p:last-of-type {
+  border: none;
+  padding-bottom: 10px;
+}
+@media(min-width:1200px){
+  .pricing .container .pricing-card .item{
+   flex-basis: 23.5%;
+  }
+}
+@media(max-width:1199px){
+  .pricing .container .pricing-card .item{
+   flex-basis: 48.5%;
+  }
+}
+@media(max-width:571px){
+  .pricing .container .pricing-card .item{
+   flex-basis: 100%;
+   margin-bottom: 50px;
+  }
+}
+
+
+
+/* end pricing */
