@@ -951,6 +951,23 @@ position: absolute;
   font-size: 15px;
   border-radius: 3px;
 }
+.pricing .contact-us {
+  margin: 0 auto;
+  text-align: center;
+}
+.pricing .contact-us p {
+  margin-bottom: 50px;
+  font-size: 17px;
+}
+.pricing .contact-us a {
+ text-decoration: none;
+ background-color: white;
+ border: 2px var(--main-color) solid;
+ border-radius: 2px;
+ padding: 10px 25px;
+ color: var(--main-color);
+ font-weight: bold;
+}
 .pricing-card .item .features p:last-of-type {
   border: none;
   padding-bottom: 10px;
@@ -971,7 +988,255 @@ position: absolute;
    margin-bottom: 50px;
   }
 }
-
-
-
 /* end pricing */
+
+/* start subscribe */
+.subscribe{
+  padding-top: var(--section-padding);
+  padding-bottom:  var(--section-padding);
+  background-image: url(../media/subscribe.jpg);
+  background-size: cover;
+  position: relative;
+}
+.subscribe::before{
+  content: "";
+  background-color: rgb(0 0 0 / 0.55);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.subscribe .input {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+.subscribe .input p{
+  width: 55%;
+    color: white;
+    font-size: 16px;
+    line-height: 2;
+    margin-top: -2px;
+    position: relative;
+
+}
+.subscribe .input form{
+  width: 40%;
+  position: relative;
+}
+.subscribe .input form i{position: absolute;
+    top: 22px;
+    left: 15px;
+    color: white;
+}
+.subscribe .input form input[type="email"]{
+  border:1px solid white ;
+  border-right: none;
+  width: 70%;
+  HEIGHT: 60px;
+  color: white;
+  background-color: transparent;
+  padding-left: 40px;
+  outline: none;
+}
+.subscribe .input form input[type="email"]::placeholder{
+  color: white;
+}
+.subscribe .input form input[type="submit"]{
+  background-color: var(--main-color);
+  border: 1px solid white ;
+  border-left: none;
+  border-left: none;
+  width: 28%;
+  height: 60px;
+  color: white;
+  position: absolute;
+}
+@media (max-width: 991px) {
+  .subscribe .input form{
+    width: 100%;
+  }
+  .subscribe .input p{
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+
+  }
+  
+}
+/* end subscribe */
+
+/* start contact */
+.contact{
+padding-top: var(--section-padding);
+padding-bottom: var(--section-padding);
+}
+
+.contact .box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact form{
+width: 70%;
+}
+
+.contact .box textarea{
+  padding-top: 20px;
+}
+.contact .box input:not(:last-of-type) , .contact .box textarea {
+  display: block;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 40px;
+  border-color: #ccc !important;
+  outline: none;
+  border-width: 1px;
+  border-image: none;
+  padding-left: 20px;
+}
+.contact .box input[type="submit"]{
+  display: block;
+  padding: 15px 20px;
+  background-color: var(--main-color);
+  border: none;
+  color: white;
+  border-radius: 4px;
+ cursor: pointer;
+
+ /* trick : this is make the element at the end of it's container 
+ in this case the submit is a block element but it's hold a litle space at the begning
+ when we write this we make it at the end */
+ margin-left: auto;
+}
+.contact .box textarea{
+  height: 200px;
+}
+.contact .text {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  margin-left: 20px;
+  padding-bottom: 100px;
+  width: 25%;
+
+}
+.contact .address {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  padding-top: 200px;
+}
+.contact .text .number {
+  position: absolute;
+  top: 0;
+  justify-content: space-around;
+}
+.contact .text  p {
+  padding-bottom: 25px;
+}
+.contact .text  li{
+  padding-bottom: 10px;
+  color: #777;
+}
+@media(min-width:992px){
+  .contact .box {
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+  }
+  .contact form input[type="submit"]{
+    right: 281px !important;
+  }
+}
+@media(max-width :767px){
+  .contact .box {
+    flex-flow: column wrap;
+  }
+  .contact form{
+    width: 100%;
+    order: 2;
+    }
+    .contact .text{
+      order: 1;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .contact .box input:not(:last-of-type),.contact .box textarea{
+      width: 100%;
+    }
+    .contact .text .number {
+      position: relative;
+    }
+    .contact .address {
+      padding-top: initial;
+    }
+
+}
+/* end contact */
+
+/* start footer  */
+.footer {
+  padding-top: var(--section-padding);
+  padding-bottom: 50px;
+  background-image: url(../media/subscribe.jpg);
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+.footer::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 0.7);
+}
+.footer .container {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  text-align: center;
+}
+.footer .container .image {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer .container p {
+  padding: 20px 15px 10px 15px;
+  padding-bottom: 20px;
+  font-size: 21px;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
+  width: fit-content;
+}
+.footer .container .social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .container .icons {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  padding-top: 13px;
+  margin-bottom: 10px;
+}
+.footer .container .icons i {
+  margin: 17px;
+  margin-top: 10px;
+}
+.footer .copyrights span {
+  font-weight: bold;
+    color: var(--main-color);
+}
+/* end footer  */
