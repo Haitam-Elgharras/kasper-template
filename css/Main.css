@@ -270,7 +270,8 @@ display: flex;
  .landing .flesh .fl {
   font-weight: 900;
   font-size: 25px;
-  color: rgb(255 255 255 / 0.5);
+  color: rgb(255 255 255 / 0.8);
+  cursor: pointer;;
 }
  .landing .flesh i {
 size: 20px;
